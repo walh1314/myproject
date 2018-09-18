@@ -1,0 +1,29 @@
+spring:
+  profiles:
+    #active: dev
+  application:
+    name: rule-engine-kafka
+kafka:
+  consumer:
+    # 配置 zookeeper 的server
+    #servers: 211.159.183.125:9092,139.199.77.21:9092,118.89.37.185:9092
+    servers: 120.78.163.250:9092
+    group.id: kafka01
+    enable.auto.commit: true
+    # 会话超时 ， 单位：毫秒
+    session.timeout: 20000
+    # 自动提交间隔时间，单位：毫秒
+    auto.commit.interval: 3000
+    auto.offset.reset: latest
+    # 并发数
+    concurrency: 10
+    # 鉴权方式配置
+    properties:
+      sasl.mechanism: PLAIN
+      security.protocol: SASL_PLAINTEXT
+    base.topic: test.*
+server:
+  port: 18079
+tsf:
+  auth:
+    enable: false

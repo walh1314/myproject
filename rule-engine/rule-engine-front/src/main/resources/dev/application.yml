@@ -1,0 +1,36 @@
+logging:
+  file: /rule-engine-logs/${spring.application.name}/root.log
+  level: 
+    root: INFO
+management:
+  security:
+    enabled: false
+
+com: 
+  server:
+    tenant: simulator
+    tenant-url: http://beancon-mc-useraccount:18081
+    rule: 
+      core: rule-engine-core
+    tenant-params: 
+      x-micro-service-name: beacon-mc-useraccount
+      x-name-space-code: default-code
+spring:
+    #redis数据源配置
+  redis:
+    host: 127.0.0.1
+    timeout: 1000
+    port: 6379
+    password: redis
+    pool:
+      max-idle: 10
+      max-active: 30
+      max-wait: 18000
+      min-idle: 0
+##  数据源配置
+rule:
+  datasource:
+    url: jdbc:mysql://localhost:3306?useSSL=false&useUnicode=true&characterEncoding=utf8
+    username: ENC(u0U7XGHdAH9oW2PU3VSPlHG8bZj3xlyN)
+    password: ENC(n1A3YS68VPNIms4OjfJWbMo7+A3jBHyS)
+    driverClassName: com.mysql.jdbc.Driver

@@ -1,0 +1,37 @@
+logging:
+  file: /rule-engine-logs/${spring.application.name}/root.log
+  level: 
+    root: INFO
+management:
+  security:
+    enabled: false
+com: 
+  server:
+    tenant: beancon-mc-useraccount
+    #http://service-o8bikfta-1256676747.ap-guangzhou.apigateway.myqcloud.com/release/mc/
+    #http://beancon-mc-useraccount
+    tenant-url: http://service-o8bikfta-1256676747.ap-guangzhou.apigateway.myqcloud.com/release/mc
+    rule:
+      core: rule-engine-core
+    tenant-params: 
+      x-micro-service-name: beacon-mc-useraccount
+      x-name-space-code: default-code
+##  数据源配置
+rule:
+  datasource:
+    url: jdbc:mysql://172.16.16.134:3306?useSSL=false&useUnicode=true&characterEncoding=utf8
+    username: beacon
+    password: Foxconn88!
+    driverClassName: com.mysql.jdbc.Driver
+spring:
+  #redis数据源配置
+  redis:
+    host: 172.16.16.56
+    timeout: 1000
+    port: 6379
+    password: foxconn168!
+    pool: 
+      max-idle: 10
+      max-active: 30
+      max-wait: 18000
+      min-idle: 0

@@ -1,0 +1,18 @@
+server:
+  port: 8282
+spring:
+  application:
+    name: rule-engine-front
+  messages:
+    encoding: UTF-8
+    basename: /messages/lamp-messages
+    cache-duration: 300
+tsf:
+  auth:
+    enable: false
+logging:
+  level:
+   com.foxconn.core.pro.server.rule.engine.front.thirdparty.clound.AccountDbService: DEBUG
+jasypt:
+  encryptor:
+    password: EbfYkitulv73I2p0mXI50JMXoaxZTKJ7
